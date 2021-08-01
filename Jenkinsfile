@@ -5,6 +5,7 @@ pipeline {
 	}
 	options {	
 		buildDiscarder(logRotator(numToKeepStr: '10'))
+		// 禁止并行构建
 		disableConcurrentBuilds()
 	}
 	stages {        
