@@ -4,7 +4,7 @@ pipeline {
 		maven 'mvn-3.5.4'    
 	}
 	options {	
-		buildDiscrader(logRotator(numToKeepStr: '10'))
+		buildDiscarder(logRotator(numToKeepStr: '10'))
 	}
 	stages {        
 		stage('build') {          
