@@ -30,7 +30,7 @@ pipeline {
 				    skipCopyOfSrcFiles: false,
 				    // 如果true，对各维度的覆盖率进行比较，任何一个维度的当前覆盖率小于最小阈值，就构建失败，
 				    // 如果在最小和最大阈值之间，则构建状态为不稳定，如果大于最大阈值，就构建成功
-				    changeBuildStatus: true,
+				    changeBuildStatus: false,
 				    // 字节码指令覆盖率
 				    minimumInstructionCoverage: '30', maximumInstructionCoverage: '70',
 				    // 行覆盖率
