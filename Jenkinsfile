@@ -55,17 +55,17 @@ pipeline {
 				)
 			}       
 		}
-		stage('Example') {
-		    steps {
-		        script {
-		            def browsers = ['chrome', 'firefox']
-		            // 单引号没办法替换变量
-		            for (int i = 0; i < browsers.size(); i++) {
-		                echo "Test the ${browsers[i]} browser"
-		            }
-		        }
-		    }
-		}
+		// stage('Example') {
+		//     steps {
+		//         script {
+		//             def browsers = ['chrome', 'firefox']
+		//             // 单引号没办法替换变量
+		//             for (int i = 0; i < browsers.size(); i++) {
+		//                 echo "Test the ${browsers[i]} browser"
+		//             }
+		//         }
+		//     }
+		// }
 
 	}
 	post {
