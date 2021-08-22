@@ -7,6 +7,10 @@ pipeline {
 		buildDiscarder(logRotator(numToKeepStr: '10'))
 		// 禁止并行构建
 		disableConcurrentBuilds()
+		// 失败重试 包括第一次失败
+		retry(4)
+		// 超出设置的时间，将终止pipeline
+		timeout(timeout: 10, unit: 'HOURS')
 	}
 	stages {        
 		stage('build') {          
@@ -14,6 +18,16 @@ pipeline {
 				sh "mvn clean package spring-boot:repackage"                
 				sh "printenv" // 将环境变量打印            
 			}       
-		}   
+		}
+		stage('Example') {
+		    steps {
+		        script {
+		            def browsers = ['chrome', 'firefox']
+		            for (int i = 0; i < browsers.size(); i++) {
+		                echo 'Test the ${browsers[i]} browser'
+		            }
+		        }
+		    }
+		}
 	}
 }
