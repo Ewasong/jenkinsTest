@@ -23,7 +23,7 @@ pipeline {
 				    // class文件位置
 				    classPattern: 'target/classes',
 				    // 源文件位置
-				    sourecePattern: 'src/main/java'
+				    sourecePattern: 'src/main/java',
 				    // 排除分析的位置
 				    exclusionPattern: 'src/test*',
 				    // 是否禁用每行覆盖率的源文件显示
