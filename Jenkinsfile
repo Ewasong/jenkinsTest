@@ -10,7 +10,7 @@ pipeline {
 		// 失败重试 包括第一次失败
 		retry(4)
 		// 超出设置的时间，将终止pipeline
-		timeout(timeout: 10, unit: 'HOURS')
+		// timeout(timeout: 10, unit: 'HOURS')
 	}
 	stages {        
 		stage('build') {          
